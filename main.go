@@ -8,14 +8,19 @@ import (
 	"github.com/raghulchandramouli/go-fiber-crm-basic/database"
 )
 
+
 func setupRoutes(app *fiber.App) {
-	app.Get("/api/v1/lead",lead.GetLeads)
-	app.Get("/api/v1/lead:id",lead.GetLead)
-	app.Post("/api/v1/lead",lead.NewLead)
-	app.Delete("/api/v1/lead:id",lead.DeleteLead)
+	// The function does not return any value. However, it registers the following routes:
+	// - GET  /api/v1/lead: Retrieves all leads.
+	// - GET  /api/v1/lead/:id: Retrieves a specific lead by its ID.
+	// - POST /api/v1/lead: Creates a new lead.
+	// - DELETE /api/v1/lead/:id: Deletes a specific lead by its ID.
 
+	app.Get("/api/v1/lead", lead.GetLeads)
+	app.Get("/api/v1/lead/:id", lead.GetLead)
+	app.Post("/api/v1/lead", lead.NewLead)
+	app.Delete("/api/v1/lead/:id", lead.DeleteLead)
 }
-
 
 
 func initDatabase(){

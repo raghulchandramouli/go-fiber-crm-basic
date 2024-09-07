@@ -21,6 +21,7 @@ func GetLeads(c *fiber.Ctx) {
 	c.JSON(leads)
 }
 
+
 func GetLead(c *fiber.Ctx) {
 	id := c.Params("id")
 	db := database.DBConn
